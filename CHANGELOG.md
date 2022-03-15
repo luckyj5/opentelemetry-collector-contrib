@@ -18,7 +18,10 @@
 - `influxdbexporter`: Add support for cumulative, non-monotonic metrics. (#8348)
 - `oauth2clientauthextension`: Add support for EndpointParams (#7307)
 - Add `NewMetricData` function to `MetricsBuilder` to consistently set instrumentation library name (#8255)
+- `googlecloudpubsubreceiver` Added implementation of Google Cloud Pubsub receiver. (#8391)
+- `googlecloudpubsubexporter` Added implementation of Google Cloud Pubsub exporter. (#8391)
 - `coralogixexporter` Allow exporter timeout to be configured (#7957)
+- `prometheusremotewriteexporter` support adding trace id and span id attached to exemplars (#8380)
 
 ### 🛑 Breaking changes 🛑
 
@@ -41,9 +44,15 @@
 
 - `zipkinexporter`: Set "error" tag value when status is set to error (#8187)
 - `prometheusremotewriteexporter`: Correctly handle metric labels which collide after sanitization (#8378)
+- `prometheusremotewriteexporter`: Drop labels when exemplar attributes exceed the max number of characters (#8379)
 - `k8sclusterreceiver`: Add support to enable k8s node and container cpu metrics to be reported as double values (#8245)
   - Use "--feature-gates=receiver.k8sclusterreceiver.reportCpuMetricsAsDouble" to enable reporting node and container
     cpu metrics as a double values.
+- `tanzuobservabilityexporter`: Fix a typo in Instrumentation Library name and version tags (#8384)
+
+### 🚩 Deprecations 🚩
+
+- `datadogexporter`: Deprecate automatic environment variable detection (#8397)
 
 ### 🚀 New components 🚀
 
