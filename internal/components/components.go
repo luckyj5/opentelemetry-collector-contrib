@@ -141,6 +141,7 @@ import (
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowsperfcountersreceiver"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver"
 	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zookeeperreceiver"
+	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/winlogreceiver"
 )
 
 func Components() (component.Factories, error) {
@@ -210,6 +211,7 @@ func Components() (component.Factories, error) {
 		splunkhecreceiver.NewFactory(),
 		statsdreceiver.NewFactory(),
 		wavefrontreceiver.NewFactory(),
+		winlogreceiver.NewFactory(),
 		windowsperfcountersreceiver.NewFactory(),
 		zookeeperreceiver.NewFactory(),
 		syslogreceiver.NewFactory(),
